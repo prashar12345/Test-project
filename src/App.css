@@ -94,10 +94,7 @@ margin-bottom: 10px;
 div#nav-tab {
   border-bottom: navajowhite;
 }
-select {
-  width: 100%;
-  border: none;
-}
+
 .top-tab {
   width: 73px;
   border: 1px solid #00000038 !important;
@@ -188,6 +185,43 @@ svg.icon {
   background: #fff;
   font-weight: 500;
   color: #091a33;
+}
+
+/* BarChart.css */
+
+.bar-chart {
+  display: flex;
+  margin-top: 20px;
+}
+
+.bar {
+  height: 30px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+.bar.total {
+  background-color: #3498db;
+}
+
+.bar.principal {
+  background-color: #008000;
+    height: 11px;
+    border-radius: 11px;
+}
+
+.bar.tax {
+  background-color: #e74c3c;
+  height: 11px;
+  border-radius: 11px;
+}
+
+.bar.home-insurance {
+  background-color: #f39c12;
+}
+
+.bar.pmi {
+  background-color: #9b59b6;
 }
 
 /* Rounded sliders */
@@ -333,6 +367,10 @@ i.fa.fa-home.hr-home {
   width: 100%;
   position: absolute;
   top: -12px;
+}
+select {
+  width: 100%;
+  border: none;
 }
 .side-pr{
   background-color: #3b82f6;

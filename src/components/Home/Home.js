@@ -59,7 +59,7 @@ function Home() {
     });
     setLoanData({ ...loanData, leftAmount: P });
   }, [filters]);
-
+  const total = monthlyData.total;
   return (
     <>
       <Header />
@@ -69,6 +69,8 @@ function Home() {
             {/* --Mortgage Calculator---- */}
             {/* ---- */}
             <div>
+              {/* <input type='range' className="less" min="0" max="100" step="10" value={data} onChange={(e)=>setData(e.target.value)}/>
+<h3>{data}</h3> */}
             </div>
             <div className="col-md-3">
               <h3 className="side-title mb-3 mt-4">Mortgage Calculator</h3>
@@ -363,7 +365,7 @@ function Home() {
                           })
                         }
                       >
-                        <option className="selectcls">Select Year</option>
+                        <option>Select Year</option>
                         <option value="1">1 Year</option>
                         <option value="2">2 Year</option>
                         <option value="3">3 Year</option>
@@ -503,11 +505,24 @@ function Home() {
                   </h3>
                   <h3 className="main-price">${monthlyData.total}</h3>
                 </div>
-                <div className="d-flex justify-content-between mb-3">
-                  <div className="side-progress">.</div>
-                  <div className="side-prog">.</div>
-                  <div className="side-progre">.</div>
-                  <div className="side-pr">.</div>
+                <div className="bar-chart">
+                  <div className="side-progress ">.</div>
+                  <div
+                    className="bar total"
+                    style={{
+                      width: `${(monthlyData.principal / total) * 100}%`,
+                    }}
+                  />
+                  <div
+                    className="bar principal"
+                    style={{ width: `${(monthlyData.tax / total) * 100}%` }}
+                  />
+                  <div
+                    className="bar tax"
+                    style={{
+                      width: `${(monthlyData.homeInsurance / total) * 100}%`,
+                    }}
+                  />
                 </div>
 
                 <div className="d-flex flex-wrap justify-content-between mb-2">
@@ -561,6 +576,12 @@ function Home() {
                   <h3 className="main-price">${loanData.leftAmount}</h3>
                 </div>
 
+                {/* <div className="d-flex flex-wrap justify-content-between mb-3 ">
+                  <h3 className="title">Principal & Interest</h3>
+                  <h3 className="title">
+                    <b>${filters.purchasePrice}</b>
+                  </h3>
+                </div> */}
 
                 <div className="d-flex flex-wrap justify-content-between mb-3 ">
                   <h3 className="title">Purchase Price</h3>
@@ -589,6 +610,7 @@ function Home() {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
