@@ -94,7 +94,10 @@ margin-bottom: 10px;
 div#nav-tab {
   border-bottom: navajowhite;
 }
-
+select {
+  width: 100%;
+  border: none;
+}
 .top-tab {
   width: 73px;
   border: 1px solid #00000038 !important;
